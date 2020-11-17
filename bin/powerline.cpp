@@ -1,42 +1,36 @@
-/**
- * @file powerline.cpp
- *
- * @version 01.01 2020-11-17
- *
- * @brief 
- *
- * @ingroup powerline
- * (Note: this needs exactly one @defgroup somewhere)
- *
- * @author Castellani Davide
- *
- * Contact: contacts@castellanidavide.it
- *
+/*
+ * This template is valid both in C and in C++,
+ * so you can expand it with code from both languages.
+ * NOTE: it is recommended to use this even if you don't
+ * understand the following code.
  */
 
-// Includes
-#include <bits/stdc++.h>
-using namespace std;
+#include <stdio.h>
+#include <assert.h>
 
-// Variabiles
-int N;
+// constraints
+#define MAXN 100000
 
-// Main code
-int main()
-{
-  // Cncomment the following lines if you want to read/write from files
-  // freopen("input.txt", "r", stdin);
-  // freopen("output.txt", "w", stdout);
+// input data
+int N, i, days=0;
+int H[MAXN];
 
-  // Input
-  cin >> N;
+int main() {
+//  uncomment the following lines if you want to read/write from files
+//    freopen("input.txt", "r", stdin);
+//    freopen("output.txt", "w", stdout);
 
-  // Code
-  // ...
+    assert(1 == scanf("%d", &N));
+    for(i=0; i < N; i++)
+        assert(1 == scanf("%d", &H[i]));
 
-  // Output
-  cout << N << endl;
+    for(int i=0; i < N; i++){
+        if(H[i]<H[(i+1)]){
+            days++;
+        }
+    }
 
-  // End
-  return 0;
+    printf("%d\n", days); // print the result
+
+    return 0;
 }
